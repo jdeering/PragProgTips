@@ -16,8 +16,7 @@
         a {color:#DA4453; font-weight: bold;}
         a:hover {color:#ED5565;}  
         
-        .card {                          
-            position:absolute;            
+        .card {
             left:3em;
             right:3em;
             bottom:3em;                        
@@ -25,7 +24,7 @@
             background:#fff;
             -webkit-box-shadow: 0 2px 1px rgba(0,0,0,0.2);
             box-shadow: 0 2px 1px rgba(0,0,0,0.2);
-        }                               
+        }
     </style>
     
     <noscript>
@@ -36,16 +35,18 @@
         <div id="tip">  
             <div id="title"></div>
             <div id="desc"></div>
-        </div>    
+        </div>
         <p><a target="_blank" href="http://pragprog.com/the-pragmatic-programmer/extracts/tips">Read more Pragmatic Software Development Tips</a></p>         
         <span><a target="_blank" href="https://github.com/braydie/PragProgTips"><img src="github.png" alt="View on GitHub" /></a></span>
     </div>      
     
     <script>
-    $.getJson('tips.json', function(data) {
-        var item = data[Math.floor(Math.random()*data.length)];
-        $("#title").html(item.title);
-        $("#desc").html(item.desc);
+    $(function(){
+        $.getJSON('tips.json', function(data) {
+            var item = data[Math.floor(Math.random()*data.length)];
+            $("#title").html(item.title);
+            $("#desc").html(item.desc);
+        });
     });
     </script>
 </body>
